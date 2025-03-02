@@ -368,7 +368,11 @@ function ProductList() {
                     <div className="product-title">{plant.cost}</div>
                     {/*Similarly like the above plant.name show other details like description and cost*/}
                     <button
-                      className="product-button"
+                      className={
+                        addedToCart[plant.name]
+                          ? "disabled-button"
+                          : "product-button"
+                      }
                       onClick={() => handleAddToCart(plant)}
                       disabled={addedToCart[plant.name]}
                     >

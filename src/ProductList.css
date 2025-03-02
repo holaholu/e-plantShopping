@@ -197,6 +197,12 @@ body {
 }
 /* ProductList.css */
 
+.disabled-button {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
 .product-button {
     background-color: #4CAF50; /* Green */
     border: none;
