@@ -10,6 +10,11 @@ function ProductList() {
   const [showCart, setShowCart] = useState(false);
   const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
 
+  const totalItemInCart = cart.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
   const plantsArray = [
     {
       category: "Air Purifying Plants",
@@ -322,7 +327,7 @@ function ProductList() {
             {" "}
             <a href="#" onClick={(e) => handleCartClick(e)} style={styleA}>
               <h1 className="cart">
-                {cart.length > 0 && <span>{cart.length}</span>}
+                {totalItemInCart > 0 && <span>{totalItemInCart}</span>}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 256 256"
